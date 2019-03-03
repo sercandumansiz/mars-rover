@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using FluentAssertions;
 using MarsRover.Program.Common.Enums;
 using MarsRover.Program.ExplorationEngine.Commands;
@@ -15,7 +16,6 @@ namespace MarsRover.Tests
     {
         private IRoverService _roverService;
         private IPlateauService _plateauService;
-        private IInstructionService _instructionService;
         private IExplorationCommand _explorationCommandMock;
         private IExplorationFactory _explorationFactoryMock;
         private ILogger<InstructionService> _loggerInstructionMock;
@@ -39,7 +39,6 @@ namespace MarsRover.Tests
         {
             _plateauService = new PlateauService(_loggerPlateauMock);
             _roverService = new RoverService(_loggerRoverMock, _explorationFactoryMock);
-            _instructionService = new InstructionService(_loggerInstructionMock);
 
             BaseModel<PlateauModel> basePlateauModel = _plateauService.Create(width, height);
 
@@ -71,7 +70,6 @@ namespace MarsRover.Tests
         {
             _plateauService = new PlateauService(_loggerPlateauMock);
             _roverService = new RoverService(_loggerRoverMock, _explorationFactoryMock);
-            _instructionService = new InstructionService(_loggerInstructionMock);
 
             BaseModel<PlateauModel> basePlateauModel = _plateauService.Create(width, height);
 
