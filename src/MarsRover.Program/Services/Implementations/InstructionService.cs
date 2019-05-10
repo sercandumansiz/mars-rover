@@ -23,9 +23,9 @@ namespace MarsRover.Program.Services.Implementations
             if (!string.IsNullOrEmpty(instruction))
             {
                 char[] instructions = instruction.ToCharArray();
-                foreach (char item in instructions)
+                foreach (char instruction in instructions)
                 {
-                    switch (item)
+                    switch (instruction)
                     {
                         case (char)Instruction.RotateRight:
                             baseInstructionModel.Data.Add(Instruction.RotateRight);
